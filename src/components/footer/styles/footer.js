@@ -32,7 +32,6 @@ export const Link = styled.a
     text-decoration: none;
     line-height: 18px;
 
-    
     &:hover {
         text-decoration: underline;
         color: #606060;

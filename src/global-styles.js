@@ -10,5 +10,6 @@ export const GlobalStyles = createGlobalStyle
             
             font-size: 16px;
             margin: 0;
+            color: rgb(34, 34, 34);
     }
 `
