@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
-import { HeaderContainer } from '../containers/header'
+import React, { useState, useContext } from 'react'
+import { useHistory } from 'react-router-dom'
 
+import { FirebaseContext} from '../context/firebase'
+
+import { HeaderContainer } from '../containers/header'
 import { FooterContainer } from '../containers/footer'
 import { Form } from '../components'
 import {RiErrorWarningLine} from 'react-icons/ri'
@@ -8,19 +11,27 @@ import {RiErrorWarningLine} from 'react-icons/ri'
 import * as ROUTES from '../constants/routes'
 
 export default function Signin() {
-    const [error, setError] = useState('')
+    const { firebase } = useContext(FirebaseContext)
+    const history = useHistory()
+
     const [emailAddress, setEmailAddress] = useState('')
     const [password, setPassword] = useState('')
-    const [password2, setPassword2] = useState('')
+    const [error, setError] = useState('')
 
-
-    const isInvalid = password === '' | emailAddress === '' | password2 === ''
-    
+    const isInvalid = password === '' | emailAddress === ''
 
     const handleSignin = (event) => {
         event.preventDefault()
-        isValid
-       
+
+        firebase
+            .auth()
+            .signInWithEmailAndPassword(emailAddress, password)
+            .then(() => {
+                setEmailAddress('')
+                setPassword('')
+                setError('')
+                history.push(ROUTES.BROWSE)
+            }).catch((error) => setError(error.message))
     }
 
     return (
@@ -44,16 +55,10 @@ export default function Signin() {
                             value={password}
                             onChange={({ target }) => setPassword(target.value)}
                         />
-                        <Form.Input
-                            type="password"
-                            placeholder="Retype Password"
-                            autoComplete="off"
-                            value={password2}
-                            onChange={({ target }) => setPassword2(target.value)}
-                        />
-                        {error && <Form.Error><RiErrorWarningLine/> {error}</Form.Error>}
+                     
+                        {error && <Form.Error><RiErrorWarningLine/>{error}</Form.Error>}
                         <Form.Submit 
-                            type="Submit"
+                            type="submit"
                             disabled={isInvalid}
                         >
                         Sign In

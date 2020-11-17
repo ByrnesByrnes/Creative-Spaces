@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Header } from '../components'
 import * as ROUTES from '../constants/routes'
 import { FaFeatherAlt } from 'react-icons/fa'
@@ -7,6 +7,8 @@ import { MdKeyboardArrowDown } from 'react-icons/md'
 
 
 export function HeaderContainer({children}) {
+    const [searchTerm, setSearchTerm] = useState('')
+
     return (
         <Header>
             <Header.Frame>
@@ -19,6 +21,10 @@ export function HeaderContainer({children}) {
                     <Header.Title>Creative Spaces</Header.Title>
                 </Header.Group>
                 <Header.Group>
+                    <Header.Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+                </Header.Group>
+                <Header.Group>
+                    <Header.ButtonLink to={ROUTES.BROWSE}>Browse Spaces</Header.ButtonLink>
                     <Header.ButtonLink to={ROUTES.SIGN_IN}>Rent your Space</Header.ButtonLink>
                     <Header.ButtonLink to={ROUTES.SIGN_IN}>
                         <FiGlobe />

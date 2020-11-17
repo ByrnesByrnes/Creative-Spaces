@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom'
-import { Container, Frame, Logo, Link, ButtonLink, Title, Group } from './styles/header'
-
+import { Container, Frame, Logo, Link, ButtonLink, Title, Group, Search, SearchInput } from './styles/header'
+import { FaSearch } from 'react-icons/fa'
 
 export default function Header({children, ...restProps}) {
     return <Container {...restProps}>{children}</Container>
@@ -34,4 +34,15 @@ Header.ButtonLink = function HeaderButtonLink({children, ...restProps}) {
 
 Header.Group = function HeaderGroup({children, ...restProps}) {
     return <Group {...restProps}>{children}</Group>
+}
+
+Header.Search = function HeaderSearch({searchTerm, setSearchTerm, ...restProps}){
+    const [searchActive, setSearchActive] = useState(false)
+
+    return (
+        <Search {...restProps}>
+            <SearchInput active={searchActive} value={searchTerm} onChange={({ target }) => setSearchTerm(target.value)}/>
+            <FaSearch  onClick={() => setSearchActive(!searchActive)}/>
+        </Search>
+    )
 }

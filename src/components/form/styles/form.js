@@ -23,7 +23,7 @@ export const Frame = styled.div
     }
 `
 
-export const Base = styled.div
+export const Base = styled.form
 `
     display: flex;
     flex-direction: column;
@@ -39,12 +39,19 @@ export const Input = styled.input
     border: 1px solid rgb(176, 176, 176);
     border-bottom: none;
     
-
+    transition: 0.3s ease-in-out;
     
     &:focus {
-        border: 2px solid black;
+        border: 2px solid rgb(0, 0, 0);
         outline: none;
     }
+
+    &:invalid {
+        box-shadow: none;
+        border:1px solid rgb(193, 53, 21);
+        background-color: rgba(193, 53, 21,0.07);
+    }
+
 
     &:first-of-type {
         border-top-left-radius: 12px;
@@ -71,7 +78,8 @@ export const Title = styled.h1
 `
 
 export const Submit = styled.button
-`
+`   
+    box-sizing: border-box;
     background-color: #FF385C;
     color: white;
     border-radius: 12px;
@@ -82,6 +90,13 @@ export const Submit = styled.button
     font-weight: bold;
     letter-spacing: 1px;
     margin-top: 30px;
+    
+    transition: .3s ease-in-out;
+
+    &:focus {
+        outline: solid black 2px;
+        -moz-outline-radius: 13px;
+    }
 
     &:disabled {
         opacity: 0.5;
@@ -109,13 +124,13 @@ export const Error = styled.div
     color: rgb(193, 53, 21);
     border-radius: 4px;
     font-size: 18px;
-    font-weight: bold;
     margin: 10px 0 0 20px;
     transition: 0.2s ease-in-out;
     padding: 0;
 
     svg {
         font-size: 1.5rem;
+        width: 55px;
         margin-right: 5px;
     }
 `

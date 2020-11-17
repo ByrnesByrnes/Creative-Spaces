@@ -1,7 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { Home, Signin } from './pages'
 import  * as ROUTES from './constants/routes'
+import { 
+  Home, 
+  Signin, 
+  Signup, 
+  Browse 
+} from './pages'
 
 
 
@@ -13,10 +18,10 @@ export const App = () => {
           <Signin />
         </Route>
         <Route path={ROUTES.SIGN_UP}>
-          <p>sign up page</p>
+          <Signup />
         </Route>
         <Route path={ROUTES.BROWSE}>
-          <p>browse page</p>
+          <Browse />
         </Route>
         <Route path={ROUTES.HOME}>
           <Home />

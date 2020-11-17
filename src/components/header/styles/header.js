@@ -5,6 +5,8 @@ export const Container = styled.div
 ` 
     width: 100%;
     position: fixed;
+    z-index: 1000;
+    top: 0;
     height: 80px;
     background-color: white;
     box-shadow: 5px 1px 10px rgba(0,0,0, 0.2);
@@ -78,4 +80,14 @@ export const Title = styled.h2
 `
     color:  #FF385C;
     display: inline-block;
+`
+
+export const Search = styled.div 
+`
+
+`
+
+export const SearchInput = styled.input 
+`
+
 `
