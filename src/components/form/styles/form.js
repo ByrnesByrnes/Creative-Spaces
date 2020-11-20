@@ -9,7 +9,7 @@ export const Frame = styled.div
 `
     display: flex;
     flex-direction: column;
-    min-height: 400px;
+    min-height: 325px;
     width: 100%;
     margin: auto;
     max-width: 450px;
@@ -17,9 +17,13 @@ export const Frame = styled.div
     margin-bottom: 50px;
     border-radius: 12px;
     border: 1px solid rgb(176, 176, 176);
-
+    background-color: #fff;
     @media (max-width: 550px) {
         width: 70%;
+    }
+
+    span {
+        color: #FF385C;
     }
 `
 

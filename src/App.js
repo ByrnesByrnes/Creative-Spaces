@@ -5,7 +5,8 @@ import {
   Home, 
   Signin, 
   Signup, 
-  Browse 
+  Browse,
+  AddSpace 
 } from './pages'
 
 
@@ -23,8 +24,11 @@ export const App = () => {
         <Route path={ROUTES.BROWSE}>
           <Browse />
         </Route>
-        <Route path={ROUTES.HOME}>
+        <Route exact path={ROUTES.HOME}>
           <Home />
+        </Route>
+        <Route path={ROUTES.ADD_SPACE}>
+          <AddSpace />
         </Route>
       </Switch>
     </Router>

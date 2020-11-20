@@ -5,12 +5,16 @@ import { GlobalStyles } from './global-styles'
 
 
 import { FirebaseContext } from './context/firebase'
-import { firebaseInit } from './firebase/config'
+import { firebaseInit, firebaseFirestore } from './firebase/config'
 
 
 render(
     <>
-        <FirebaseContext.Provider value={{ firebase: firebaseInit }}>
+        <FirebaseContext.Provider value={
+            { 
+                firebase: firebaseInit, 
+                firebaseFirestore: firebaseFirestore 
+            }}>
             <GlobalStyles />
             <App />
         </FirebaseContext.Provider>

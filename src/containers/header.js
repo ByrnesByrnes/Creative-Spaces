@@ -9,7 +9,7 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import { FirebaseContext } from '../context/firebase'
 
 // Add Rest of LINKs and PAGES
-
+//header dropdown close on click away
 
 export function HeaderContainer({children}) {
 
@@ -56,10 +56,10 @@ export function HeaderContainer({children}) {
                         </Header.Group>
                         <Header.Break />
                         <Header.Group>
-                            <Header.TextLink>Host Your Space</Header.TextLink>
+                            <Header.TextLink to={ROUTES.ADD_SPACE}>Host Your Space</Header.TextLink>
                         </Header.Group>
                         <Header.Group>
-                            <Header.TextLink>Help</Header.TextLink>
+                            <Header.TextLink to={ROUTES.HOME}>Help</Header.TextLink>
                         </Header.Group>
                         </Header.Dropdown>
                     </Header.Profile>
