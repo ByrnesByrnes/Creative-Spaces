@@ -6,7 +6,10 @@ import {
   Signin, 
   Signup, 
   Browse,
-  AddSpace 
+  AddSpace,
+  UserProfile,
+  Help,
+  Space
 } from './pages'
 
 
@@ -29,6 +32,15 @@ export const App = () => {
         </Route>
         <Route path={ROUTES.ADD_SPACE}>
           <AddSpace />
+        </Route>
+        <Route path={ROUTES.PROFILE}>
+          <UserProfile />
+        </Route>
+        <Route path={ROUTES.HELP}>
+          <Help />
+        </Route>
+        <Route path={ROUTES.SPACE}>
+          <Space />
         </Route>
       </Switch>
     </Router>

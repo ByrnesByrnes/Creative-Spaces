@@ -7,8 +7,7 @@ import styled from 'styled-components'
 export const Container = styled.section 
 `
     width: 90%;
-    margin: auto;
-    margin-top: 100px;
+
 
   
 `
@@ -30,11 +29,11 @@ export const Title = styled.h1
   
 `
 
-export const Image = styled.img 
+export const Image = styled.div 
 `   
     height: 100%;
     width: 300px;
-    object-fit: cover;
+    
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
 `
