@@ -4,29 +4,7 @@ export const Container = styled.section
 `
     padding-top: 100px;
 `
-
-export const Frame = styled.div
-`
-    display: flex;
-    flex-direction: column;
-    min-height: 325px;
-    width: 100%;
-    margin: auto;
-    max-width: 450px;
-    padding: 40px 40px;
-    margin-bottom: 50px;
-    border-radius: 12px;
-    border: 1px solid rgb(176, 176, 176);
-    background-color: #fff;
-    @media (max-width: 550px) {
-        width: 70%;
-    }
-
-    span {
-        color: #FF385C;
-    }
-`
-
+    
 export const Base = styled.form
 `
     display: flex;
@@ -44,7 +22,7 @@ export const Input = styled.input
     border-bottom: none;
     
     transition: 0.3s ease-in-out;
-    
+
     &:focus {
         border: 2px solid rgb(0, 0, 0);
         outline: none;
@@ -76,7 +54,7 @@ export const Input = styled.input
 export const Title = styled.h1
 `
     min-height: 64px;
-    text-align: center;
+    text-align: inherit;
     margin: 0;
     
 `
@@ -145,7 +123,69 @@ export const Link = styled(RouterLink)
     font-weight: 600;
     margin-left: 10px;
 
-    &:Hover {
+    &:hover {
         color: rgb(0,0,0);
+    }
+`
+
+export const Frame = styled.div
+`
+    display: flex;
+    flex-direction: column;
+    min-height: 350px;
+    width: 100%;
+    margin: auto;
+    max-width: 450px;
+    padding: 40px 40px;
+    margin-bottom: 50px;
+    border-radius: 12px;
+    border: 1px solid rgb(176, 176, 176);
+    background-color: #fff;
+    text-align: center;
+    
+    &.first-frame {
+        &:first-of-type {
+            font-size: 1.3rem;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+            border-right: 0px;
+            border: none;
+            border-right: 1px solid rgb(230, 230, 230);
+            text-align: left;
+            height: 350px;
+            box-shadow: 5px 1px 10px rgba(0,0,0, 0.2);
+
+            ${Link} {
+                margin: 30px 0;
+                font-size: 14px;
+                color: #484848;
+                font-weight: 500;
+
+                &:hover {
+                    color: rgba(0,0,0);
+                }
+            }
+
+        }
+    }
+    
+    & ~ & {
+        &:last-of-type {
+            
+            border: none;
+            border-top-left-radius: 0px;
+
+            border-bottom-left-radius: 0px;
+            box-shadow: 5px 1px 10px rgba(0,0,0, 0.2);
+            max-height: 350px;
+        }
+    }
+    
+    span {
+        color: #FF385C;
+    }
+
+    @media (max-width: 550px) {
+        width: 70%;
     }
 `

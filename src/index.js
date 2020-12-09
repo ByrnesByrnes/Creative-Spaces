@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from 'react-dom';
+import ReactDOM from 'react-dom';
 import { App } from './App';
 import { GlobalStyles } from './global-styles'
 
@@ -9,9 +9,7 @@ import { useAuthListener } from './hooks'
 import { FirebaseContext } from './context/firebase'
 import { firebaseInit, firebaseFirestore, firebaseStorage } from './firebase/config'
 
-
-
-render(
+ReactDOM.render(
     <>
         <FirebaseContext.Provider value={
             { 

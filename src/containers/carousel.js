@@ -8,7 +8,6 @@ export function CarouselContainer({images}) {
 
     const goLeft = () => {
         x === 0 ? setX(-100 * (images.length - 1)) : setX(x + 100)
-
     }
 
     const goRight = () => {
