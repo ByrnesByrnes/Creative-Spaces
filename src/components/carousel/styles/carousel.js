@@ -11,13 +11,11 @@ export const Container = styled.div
     marging: 0;
     padding: 0;
     align-items: center;
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
+    border-radius: 12px;
 
 `
 export const Slide = styled.div 
 `
-    
     min-width: 100%;
     height: 100%;
     transition: 0.2s;
@@ -28,14 +26,11 @@ export const Control = styled.div
 `
     position: absolute;
     display: flex;
-    
-    width: 100%;
 
+    width: 100%;
     justify-content: space-between;
     top: 50%;
     transform: translateY(-50%);
-    
- 
 `
 
 export const Arrow = styled.button 
@@ -45,21 +40,20 @@ export const Arrow = styled.button
     justify-content: center;
     padding: 0;
     border-radius: 50%;
-    height:40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     margin: 0 10px;
     border: 1px solid rgba(0,0,0, 0.08);
     font-size: 20px;
     cursor: pointer;
     background-color: rgba(255,255,255, 0.9);
-    transition: .2s;
+    transition: .2s ease-in-out;
     box-shadow: transparent 0px 0px 0px 1px,
                 transparent 0px 0px 0px 4px,
                 rgba(0,0,0, 0.18) 0px 2px 4px;
 
     &:hover {
         transform: scale(1.2);
-        
     }
 `
 

@@ -36,7 +36,7 @@ export function HeaderContainer({children}) {
                 <Header.Group>
                     <Header.Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
                 </Header.Group>
-                <Header.Group>
+                <Header.Group className="nav-links">
                     <Header.ButtonLink to={ROUTES.BROWSE}>Browse Spaces</Header.ButtonLink>
                     <Header.ButtonLink to={user ? ROUTES.PROFILE : ROUTES.SIGN_IN}>Rent your Space</Header.ButtonLink>
                     <Header.ButtonLink to={ROUTES.SIGN_IN}>

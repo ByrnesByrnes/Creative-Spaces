@@ -6,65 +6,50 @@ import { useContent } from "../hooks";
 import { Card, Carousel } from "../components";
 import { CarouselContainer } from './carousel'
 import { selectionMap } from "../utils";
-import { GiConsoleController } from "react-icons/gi";
+import { GiConsoleController, GiRoundStar } from "react-icons/gi";
+import { BsDot } from 'react-icons/bs'
 
 export function BrowseContainer({ products }) {
 
-    const [selectedProduct, setSelectedProduct] = useState(null)
+  //const { products } = useContent('products')
+
+  //console.log(products)
+  //const productsFilter = selectionMap(products)
+
+  //console.log(productsFilter)
 
 
+  return (
+    <Card.Container>
+      <Card.Group>
+      <Card.Group className="align title">
+        <Card.Title>Mississauga</Card.Title>
+        <Card.Text>show({products.length})</Card.Text>
+      </Card.Group>
+        {products.map((product) => (
+          <Card.Group className="card-item">
+            <Card key={product.docId}>
+              <Card.Image>
+                <CarouselContainer images={product.img} />
+              </Card.Image>
 
-    //const { products } = useContent('products')
-
-    //console.log(products)
-    //const productsFilter = selectionMap(products)
-
-    //console.log(productsFilter)
-
-
-    return selectedProduct === null ? (
-        <Card.Container>
-            <Card.Group>
-                {products.map((product) => (
-                    <Card key={product.docId}>
-                        <Card.Image>
-                            <CarouselContainer images={product.img} />
-                        </Card.Image>
-                    
-                        <Card.Group>
-                            <Card.SubTitle
-                                onClick={() =>
-                                setSelectedProduct(product)}
-                            >{product.name}</Card.SubTitle>
-                            <Card.Text>{product.description}</Card.Text>
-                            <Card.Group className="rating-price">
-                                <Card.Text>Rating here</Card.Text>
-                                <Card.Text className="price">C${product.price}/per 2 hours</Card.Text>
-                            </Card.Group>
-                        </Card.Group>
-                    </Card>
-                ))}
-            </Card.Group>
-        </Card.Container>
-    ) : (
-        
-            <Card.Container>
+              <Card.Group className="card-info">
                 <Card.Group>
-                        <Card key={selectedProduct.docId}>
-                            <Card.Image>
-                                <CarouselContainer images={selectedProduct.img} />
-                            </Card.Image>
-                            <Card.Group>
-                                <Card.SubTitle>{selectedProduct.name}</Card.SubTitle>
-                                <Card.Text>{selectedProduct.description}</Card.Text>
-                                <Card.Group className="rating-price">
-                                    <Card.Text>Rating here</Card.Text>
-                                    <Card.Text className="price">C${selectedProduct.price}/per 2 hours</Card.Text>
-                                </Card.Group>
-                            </Card.Group>
-                        </Card>
-                 
+                  <GiRoundStar className="rating" />
+                  <Card.Text>4.98</Card.Text>
+                  <Card.Text className="reviews">(574)</Card.Text>
                 </Card.Group>
-            </Card.Container>
-        )
+                <Card.Group className="align">
+                  <Card.Text>{product.name}</Card.Text>
+                  <BsDot />
+                  <Card.Text>Location</Card.Text>
+                </Card.Group>
+                <Card.Text>{product.description}</Card.Text>
+              </Card.Group>
+            </Card>
+          </Card.Group>
+        ))}
+      </Card.Group>
+    </Card.Container>
+  )
 }

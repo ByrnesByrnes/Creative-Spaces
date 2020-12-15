@@ -21,6 +21,10 @@ export const Frame = styled.div
     align-items: center;
     margin: auto;
     padding: 0 80px;
+
+    @media (max-width: 600px) {
+        padding: 0 10px;
+    }
 `
 
 export const Group = styled.div 
@@ -39,6 +43,10 @@ export const Logo = styled.div
         height: 100%;
         font-size: 2.5em;
         fill: #FF385C;
+    }
+
+    @media (max-width: 600px) {
+        height: 20px;
     }
 `
 
@@ -79,12 +87,30 @@ export const ButtonLink = styled(NavLink)
         background-color: rgb(247,247,247);
         border-radius: 20px;
     }
+
+    
+    @media (max-width: 700px) {
+        margin: 0;
+        width: 60px;
+
+        &:nth-of-type(2) {
+            display: none;
+        }
+        &:nth-of-type(3) {
+            display: none;
+        }
+    }
 `
 
 export const Title = styled.h2
 `
     color:  #FF385C;
     display: inline-block;
+
+    @media (max-width: 600px) {
+        font-size: 1.1rem;
+        max-width: 70px;
+    }
 `
 
 export const Search = styled.div 

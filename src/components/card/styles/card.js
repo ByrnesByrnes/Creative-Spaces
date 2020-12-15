@@ -1,45 +1,68 @@
 import styled from 'styled-components'
 
-
-
-
-
 export const Container = styled.section 
 `
-    width: 90%;
-
-
-  
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
 `
 
 export const Group = styled.div 
 `   
     width: 100%;
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
 
-    &.rating-price {
-        position: absolute;
-        bottom: 0;
-        
+    &.card-item {
+        width: 50%; 
+        @media (max-width: 600px) {
+            width: 100%;
+        }
+    }
+
+    &.card-info {
+        flex-direction: column;
+    }
+
+    &.align { 
+        align-items: center;
+        svg {
+            
+            margin: 0;
+        }
+    }
+
+    &.title {
+        justify-content: space-between;
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .rating {
+        color: #FF385C;
+        margin: 0 5px 10px 0;
+
     }
 `
 
 export const Title = styled.h1 
 `
-  
+
 `
 
 export const Image = styled.div 
 `   
     height: 100%;
-    width: 300px;
-    
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid rgb(221,221,221);
+   
 `
 export const SubTitle = styled.h2 
 `
-   
+    margin: 0;
+    padding: 0;
     
 `
 
@@ -47,27 +70,22 @@ export const Text = styled.p
 `
     margin: 0;
 
-    ~ ${Group} {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 10px;
-        font-weight: bold;
-        font-size: 16px;
-
-        .price {
-            margin-right: 30px;
-        }
+    &.reviews {
+        color: rgb(113, 113, 113);;
     }
 `
 
 export const Item = styled.div 
 `
     display: flex;
-    margin: 15px 0;
-    height: 230px;
+    flex-direction: column;
+    font-size: 18px;
+    letter-spacing: .2px;
+    width: 100%;
+    margin: 0 10px;
     border-radius: 12px;
-    box-shadow: 5px 1px 10px rgba(0,0,0, 0.2);
     cursor: pointer;
+    line-height: 1.43;
     
     > ${Group} {
         padding: 15px;
@@ -79,5 +97,4 @@ export const Item = styled.div
 // RightSide
 export const Display = styled.div 
 `
-    width: 1000px;
 `
